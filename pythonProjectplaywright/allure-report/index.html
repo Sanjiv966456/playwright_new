@@ -1,0 +1,267 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Allure Test Report</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                min-height: 100vh;
+                padding: 20px;
+            }
+            
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                background: white;
+                border-radius: 8px;
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+                overflow: hidden;
+            }
+            
+            .header {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                padding: 40px 20px;
+                text-align: center;
+            }
+            
+            .header h1 {
+                font-size: 2.5em;
+                margin-bottom: 10px;
+            }
+            
+            .timestamp {
+                opacity: 0.9;
+                font-size: 0.9em;
+            }
+            
+            .stats {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 20px;
+                padding: 30px;
+                background: #f8f9fa;
+                border-bottom: 1px solid #e0e0e0;
+            }
+            
+            .stat-card {
+                background: white;
+                padding: 20px;
+                border-radius: 6px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                text-align: center;
+                border-left: 4px solid #667eea;
+            }
+            
+            .stat-card.passed {
+                border-left-color: #28a745;
+            }
+            
+            .stat-card.failed {
+                border-left-color: #dc3545;
+            }
+            
+            .stat-card.skipped {
+                border-left-color: #ffc107;
+            }
+            
+            .stat-value {
+                font-size: 2em;
+                font-weight: bold;
+                color: #333;
+                margin-bottom: 5px;
+            }
+            
+            .stat-label {
+                color: #666;
+                font-size: 0.9em;
+            }
+            
+            .content {
+                padding: 30px;
+            }
+            
+            .section-title {
+                font-size: 1.5em;
+                margin: 30px 0 20px 0;
+                color: #333;
+                border-bottom: 2px solid #667eea;
+                padding-bottom: 10px;
+            }
+            
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-bottom: 30px;
+            }
+            
+            thead {
+                background: #f8f9fa;
+            }
+            
+            th {
+                padding: 15px;
+                text-align: left;
+                font-weight: 600;
+                color: #333;
+                border-bottom: 2px solid #e0e0e0;
+            }
+            
+            td {
+                padding: 12px 15px;
+                border-bottom: 1px solid #e0e0e0;
+            }
+            
+            tr:hover {
+                background: #f8f9fa;
+            }
+            
+            .badge {
+                display: inline-block;
+                padding: 5px 12px;
+                border-radius: 20px;
+                font-size: 0.85em;
+                font-weight: 600;
+                text-transform: uppercase;
+            }
+            
+            .badge-passed {
+                background: #d4edda;
+                color: #155724;
+            }
+            
+            .badge-failed {
+                background: #f8d7da;
+                color: #721c24;
+            }
+            
+            .badge-skipped {
+                background: #fff3cd;
+                color: #856404;
+            }
+            
+            .footer {
+                background: #f8f9fa;
+                padding: 20px;
+                text-align: center;
+                color: #666;
+                font-size: 0.9em;
+                border-top: 1px solid #e0e0e0;
+            }
+            
+            .progress-bar {
+                height: 8px;
+                background: #e0e0e0;
+                border-radius: 4px;
+                overflow: hidden;
+                margin-top: 10px;
+            }
+            
+            .progress {
+                height: 100%;
+                background: linear-gradient(90deg, #28a745 0%, #20c997 100%);
+            }
+            
+            @media (max-width: 768px) {
+                .stats {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>📊 Allure Test Report</h1>
+                <div class="timestamp">Generated: 2026-06-15 13:00:52</div>
+            </div>
+            
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-value">3</div>
+                    <div class="stat-label">Total Tests</div>
+                </div>
+                <div class="stat-card passed">
+                    <div class="stat-value">2</div>
+                    <div class="stat-label">Passed</div>
+                </div>
+                <div class="stat-card failed">
+                    <div class="stat-value">0</div>
+                    <div class="stat-label">Failed</div>
+                </div>
+                <div class="stat-card skipped">
+                    <div class="stat-value">0</div>
+                    <div class="stat-label">Skipped</div>
+                </div>
+            </div>
+            
+            <div class="content">
+                <h2 class="section-title">Test Results</h2>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Test Name</th>
+                            <th>Status</th>
+                            <th>Duration</th>
+                            <th>Full Path</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+        <tr>
+            <td>test_simple_alert[chromium]</td>
+            <td><span class="badge badge-passed">PASSED</span></td>
+            <td>12.80s</td>
+            <td>test_simpleAlerts#test_simple_alert</td>
+        </tr>
+        
+        <tr>
+            <td>test_check_box[chromium]</td>
+            <td><span class="badge badge-passed">PASSED</span></td>
+            <td>4.60s</td>
+            <td>test_multiplecheckbox#test_check_box</td>
+        </tr>
+        
+        <tr>
+            <td>test_check_box[chromium]</td>
+            <td><span class="badge badge-broken">BROKEN</span></td>
+            <td>45.57s</td>
+            <td>test_check_sun_saturday#test_check_box</td>
+        </tr>
+        
+                    </tbody>
+                </table>
+                
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 6px; margin-bottom: 20px;">
+                    <h3 style="margin-bottom: 15px; color: #333;">Pass Rate</h3>
+                    <div style="display: flex; align-items: center; gap: 20px;">
+                        <div style="flex: 1;">
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 66.7%"></div>
+                            </div>
+                        </div>
+                        <div style="font-size: 1.2em; font-weight: bold; color: #667eea;">
+                            66.7%
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer">
+                <p>Allure Report | Generated on 2026-06-15 13:00:52</p>
+            </div>
+        </div>
+    </body>
+    </html>
+    
