@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="/test_mousehover (snapshot).py">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="/test_mousehover (snapshot).py" />
+              <option name="originalContent" value="import pytest&#10;from playwright.sync_api import Page, expect&#10;&#10;def test_Mouse_hover(page: Page):&#10;    page.goto(&quot;https://marriottlaneco.wpenginepowered.com/&quot;)&#10;    page.wait_for_load_state(&quot;networkidle&quot;)&#10;    page.get_by_role(&quot;link&quot;, name=&quot;Property Management&quot;, exact=True).hover()&#10;    page.get_by_role(&quot;link&quot;, name=&quot;Marriott Lane&quot;).click()&#10;    page.wait_for_timeout(3000)" />
+              <option name="updatedContent" value="import pytest&#10;from playwright.sync_api import Page, expect&#10;&#10;def test_Mouse_hover(page: Page):&#10;    page.goto(&quot;https://marriottlaneco.wpenginepowered.com/&quot;)&#10;    page.wait_for_load_state(&quot;networkidle&quot;)&#10;    page.get_by_role(&quot;link&quot;, name=&quot;Property Management&quot;, exact=True).hover()&#10;    page.wait_for_timeout(1000)&#10;    page.get_by_role(&quot;link&quot;, name=&quot;Marriott Lane&quot;).click(timeout=10000)&#10;    page.wait_for_timeout(3000)" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
