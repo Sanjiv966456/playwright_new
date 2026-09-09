@@ -16,6 +16,10 @@ import requests
 from urllib.parse import urljoin
 from playwright.sync_api import sync_playwright
 
+# Silence unverified HTTPS warnings in pytest runs that disable SSL verification
+import warnings
+from urllib3.exceptions import InsecureRequestWarning
+warnings.filterwarnings('ignore', category=InsecureRequestWarning)
 
 def collect_image_urls(page, base_url):
     urls = []
@@ -146,6 +150,12 @@ def main():
         print('-', b['url'], '=>', b.get('reason'))
 
     sys.exit(1)
+
+def test():
+    # Run quick check without SSL verification (warnings are suppressed)
+    broken = find_broken_images("https://alexandriaadev.wpenginepowered.com/", timeout=15, verify_ssl=False, headless=True)
+    assert broken == [], f"Found broken images: {broken}"
+
 
 if __name__ == '__main__':
     main()
